@@ -1,34 +1,34 @@
 /*
-Problem statement
-In an election, a single winner is chosen from a collection of ballots.
-In this case, a ballot is a list of candidates (strings), ordered by preference.
+    Problem statement
+    In an election, a single winner is chosen from a collection of ballots.
+    In this case, a ballot is a list of candidates (strings), ordered by preference.
 
-Example: the ballot [A, B, C] selects candidate A as the 1st choice, B as the 2nd, and C as the 3rd.
+    Example: the ballot [A, B, C] selects candidate A as the 1st choice, B as the 2nd, and C as the 3rd.
 
-Part I: Plurality Winner
+    Part I: Plurality Winner
 
-In this part, the winner is the candidate with the most 1st choice votes.
+    In this part, the winner is the candidate with the most 1st choice votes.
 
-Example: if we receive 4 ballots [A, B, C], 3 ballots [B, C, A], and 2 ballots [C, B, A],
-then A has received 4 first-choice votes, B has received 3, and C has received 2.
-Out of the candidates, A has received the most votes. Therefore, A is the plurality winner.
+    Example: if we receive 4 ballots [A, B, C], 3 ballots [B, C, A], and 2 ballots [C, B, A],
+    then A has received 4 first-choice votes, B has received 3, and C has received 2.
+    Out of the candidates, A has received the most votes. Therefore, A is the plurality winner.
 
-Part 2: Ranked choice winner
+    Part 2: Ranked choice winner
 
-In this part, the winner is chosen as follows:
+    In this part, the winner is chosen as follows:
 
-Step 1: if a single candidate has a strict majority (more than half) of 1st-choice votes, they are the winner.
+    Step 1: if a single candidate has a strict majority (more than half) of 1st-choice votes, they are the winner.
 
-Step 2: if no candidate has a strict majority of 1st-choice votes,
-identify the candidate with the fewest 1st-choice votes and eliminate them
-from all ballots (and remove any empty ballots). Then, go back to Step 1 and re-evaluate.
+    Step 2: if no candidate has a strict majority of 1st-choice votes,
+    identify the candidate with the fewest 1st-choice votes and eliminate them
+    from all ballots (and remove any empty ballots). Then, go back to Step 1 and re-evaluate.
 
-Example: if we receive 4 ballots [A, B, C], 3 ballots [B, C, A], and 2 ballots [C, B, A],
-then A has received 4 first-choice votes, B has received 3, and C has received 2. 
-There are 9 ballots in total, and no candidate has received a majority (at least 5) of the votes, 
-so we eliminate the candidate with the fewest 1st-choice votes, C.
-After eliminating C, we have 4 ballots [A, B] and 5 ballots [B, A]. 
-Out of these 9 ballots, B has received a majority of the votes, so B is the ranked choice winner.
+    Example: if we receive 4 ballots [A, B, C], 3 ballots [B, C, A], and 2 ballots [C, B, A],
+    then A has received 4 first-choice votes, B has received 3, and C has received 2. 
+    There are 9 ballots in total, and no candidate has received a majority (at least 5) of the votes, 
+    so we eliminate the candidate with the fewest 1st-choice votes, C.
+    After eliminating C, we have 4 ballots [A, B] and 5 ballots [B, A]. 
+    Out of these 9 ballots, B has received a majority of the votes, so B is the ranked choice winner.
 */
 
 //const sample = { "A,B,C": 2, "A,C,B": 2, "B,A,C": 3 };        //=> pluratlity A, ranked A
