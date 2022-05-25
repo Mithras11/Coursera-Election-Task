@@ -73,7 +73,6 @@ function getRankedChoiceWinner(ballots) {
                     break;
                 }
             }
-
             if (loser) {
                 break;
             }
