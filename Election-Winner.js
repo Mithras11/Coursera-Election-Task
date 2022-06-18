@@ -66,7 +66,7 @@ function getRankedChoiceWinner(ballots) {
         let minorityArr = filterMarginals(ballots, min);
 
         let loser;
-        for (var key in ballots) {
+        for (let key in ballots) {
             for (let i = 0; i < key.length; i++) {
                 if (!Object.keys(filteredBallots).includes(key[i])) {
                     loser = key[i];
